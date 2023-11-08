@@ -1,0 +1,54 @@
+definitions:
+  struct_test.AdminAcc:
+    description: struct for getting the credentials
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      password:
+        type: string
+      role:
+        type: string
+      username:
+        type: string
+    type: object
+  struct_test.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Log in Code for Go session
+  title: Log In System
+  version: 1.16.2
+paths:
+  /auth/signup:
+    post:
+      consumes:
+      - application/json
+      description: The user will create an Account
+      operationId: createAccount
+      parameters:
+      - description: Create  Account
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/struct_test.AdminAcc'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/struct_test.AdminAcc'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/struct_test.ErrorResponse'
+      summary: Set up the Account
+      tags:
+      - Creating New Account
+swagger: "2.0"

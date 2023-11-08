@@ -1,0 +1,56 @@
+2023/10/23 08:21:43 Log message 1
+2023/10/23 08:21:43 Log message 2
+2023/10/23 08:22:33 Successful in Fetching all the Data in Database
+2023/10/23 08:28:33 Log message 1
+2023/10/23 08:28:33 Log message 2
+2023/10/23 08:38:55 Log message 1
+2023/10/23 08:38:55 Log message 2
+2023/10/23 08:40:01 Log message 1
+2023/10/23 08:40:01 Log message 2
+2023/10/23 08:40:27 -----------------------Fetch Data----------------------
+2023/10/23 08:40:27 Successful in Fetching all the Data in Database
+2023/10/23 08:40:27 Host:  127.0.0.1:3000
+2023/10/23 08:40:27 -----------------------END-----------------------------
+2023/10/23 09:25:38 Log message 1
+2023/10/23 09:25:38 Log message 2
+2023/10/23 09:26:12 -----------------------Fetch Data----------------------
+2023/10/23 09:26:12 Successful in Fetching all the Data in Database
+2023/10/23 09:26:12 Host:  127.0.0.1:3000
+2023/10/23 09:26:12 []
+2023/10/23 09:26:12 -----------------------END-----------------------------
+2023/10/23 09:32:38 Log message 1
+2023/10/23 09:32:38 Log message 2
+2023/10/23 09:36:13 Log message 1
+2023/10/23 09:36:13 Log message 2
+2023/10/23 09:36:46 Log message 1
+2023/10/23 09:36:46 Log message 2
+2023/10/23 09:39:25 Log message 1
+2023/10/23 09:39:25 Log message 2
+2023/10/23 09:40:58 Log message 1
+2023/10/23 09:40:58 Log message 2
+2023/10/23 09:42:15 Log message 1
+2023/10/23 09:42:15 Log message 2
+2023/10/23 09:46:25 Log message 1
+2023/10/23 09:46:25 Log message 2
+2023/10/23 09:47:48 -----------------------Fetch Data----------------------
+2023/10/23 09:47:48 Successful in Fetching all the Data in Database
+2023/10/23 09:47:48 Host:  127.0.0.1:3000
+2023/10/23 09:47:48 -----------------------END-----------------------------
+2023/10/23 09:47:53 -----------------------Fetch Data----------------------
+2023/10/23 09:47:53 Successful in Fetching all the Data in Database
+2023/10/23 09:47:53 Host:  127.0.0.1:3000
+2023/10/23 09:47:53 [{1 Justiel admin $2a$10$4U6bSPMsAs/EES8u4A9IdeW5lGYbIZwixp0n85fLpHmIfZPKLrfyK teacher}]
+2023/10/23 09:47:53 -----------------------END-----------------------------
+2023/10/23 09:48:16 -----------------------Fetch Data----------------------
+2023/10/23 09:48:16 Successful in Fetching all the Data in Database
+2023/10/23 09:48:16 Host:  127.0.0.1:3000
+2023/10/23 09:48:16 [{1 Justiel admin $2a$10$4U6bSPMsAs/EES8u4A9IdeW5lGYbIZwixp0n85fLpHmIfZPKLrfyK teacher} {0 justiel  $2a$10$8Y0zHDcM0vq5DzyZVqG1Qe4P5vA5NO7I7y00ZiFfCjn1hTvUAf.zG }]
+2023/10/23 09:48:16 -----------------------END-----------------------------
+2023/10/23 09:48:25 -----------------------Fetch Data----------------------
+2023/10/23 09:48:25 Successful in Fetching all the Data in Database
+2023/10/23 09:48:25 Host:  127.0.0.1:3000
+2023/10/23 09:48:25 -----------------------END-----------------------------
+2023/10/23 15:41:24 -----------------------Fetch Data----------------------
+2023/10/23 15:41:24 Successful in Fetching all the Data in Database
+2023/10/23 15:41:24 Host:  127.0.0.1:3000
+2023/10/23 15:41:24 -----------------------END-----------------------------

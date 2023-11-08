@@ -1,0 +1,83 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Log in Code for Go session",
+        "title": "Log In System",
+        "contact": {},
+        "version": "1.16.2"
+    },
+    "paths": {
+        "/auth/signup": {
+            "post": {
+                "description": "The user will create an Account",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Creating New Account"
+                ],
+                "summary": "Set up the Account",
+                "operationId": "createAccount",
+                "parameters": [
+                    {
+                        "description": "Create  Account",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/struct_test.AdminAcc"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/struct_test.AdminAcc"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/struct_test.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "struct_test.AdminAcc": {
+            "description": "struct for getting the credentials",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "struct_test.ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+2023/10/18 15:16:39 Log message 1
+2023/10/18 15:16:39 Log message 2
+2023/10/18 15:16:44 -----------------------Fetch Data----------------------
+2023/10/18 15:16:44 Successful in Fetching all the Data in Database
+2023/10/18 15:16:44 Host:  127.0.0.1:123
+2023/10/18 15:16:44 [{1 Justiel Vinz C. Velasco justiel $2a$10$Yp.IupqYp0ywv820BqHSqu8LFO0lgS0VQC2Na8FM5SylK/fHPr1e. student} {2 Kate Maureen Hachaso Maui $2a$10$vC78UcRws8H/ZkEmtPaDbe7zdvy/RG1ATN3hZWDNC5fPFiL9G3QAu teacher} {3 Chienlo Mejia Longlong $2a$10$p097vwi2iv2/Q3l3h5vZjewSoU.A1vBAJbgGldAu8u0Y2sc1SWcy. teacher} {4 Chienlo Mejia Pewe $2a$10$5Yh99oJuJOyXO3FG1KUCQODtjqB.CYxDqRaoL/fDJhdu.TVYP3.02 teacher} {7 Jomari jj $2a$10$ZOXI7qsSMv9LOzCMDaKvGOSgvUL9v/uOQbPZrN.e0wNcmxxI5kFk. teacher}]
+2023/10/18 15:16:44 -----------------------END-----------------------------
+2023/10/18 15:16:44 hee
+2023/10/18 15:30:05 Log message 1
+2023/10/18 15:30:05 Log message 2
+2023/10/18 15:30:10 -----------------------Fetch Data----------------------
+2023/10/18 15:30:10 Successful in Fetching all the Data in Database
+2023/10/18 15:30:10 Host:  127.0.0.1:123
+2023/10/18 15:30:10 [{1 Justiel Vinz C. Velasco justiel $2a$10$Yp.IupqYp0ywv820BqHSqu8LFO0lgS0VQC2Na8FM5SylK/fHPr1e. student} {2 Kate Maureen Hachaso Maui $2a$10$vC78UcRws8H/ZkEmtPaDbe7zdvy/RG1ATN3hZWDNC5fPFiL9G3QAu teacher} {3 Chienlo Mejia Longlong $2a$10$p097vwi2iv2/Q3l3h5vZjewSoU.A1vBAJbgGldAu8u0Y2sc1SWcy. teacher} {4 Chienlo Mejia Pewe $2a$10$5Yh99oJuJOyXO3FG1KUCQODtjqB.CYxDqRaoL/fDJhdu.TVYP3.02 teacher} {7 Jomari jj $2a$10$ZOXI7qsSMv9LOzCMDaKvGOSgvUL9v/uOQbPZrN.e0wNcmxxI5kFk. teacher}]
+2023/10/18 15:30:10 -----------------------END-----------------------------
+2023/10/18 15:30:21 -----------------------Fetch Data----------------------
+2023/10/18 15:30:21 Successful in Fetching all the Data in Database
+2023/10/18 15:30:21 Host:  127.0.0.1:123
+2023/10/18 15:30:21 -----------------------END-----------------------------
+2023/10/18 15:32:02 Log message 1
+2023/10/18 15:32:02 Log message 2
+2023/10/18 15:32:22 -----------------------Fetch Data----------------------
+2023/10/18 15:32:22 Successful in Fetching all the Data in Database
+2023/10/18 15:32:22 Host:  127.0.0.1:123
+2023/10/18 15:32:22 -----------------------END-----------------------------
+2023/10/18 15:32:37 -----------------------Fetch Data----------------------
+2023/10/18 15:32:37 Successful in Fetching all the Data in Database
+2023/10/18 15:32:37 Host:  127.0.0.1:123
+2023/10/18 15:32:37 -----------------------END-----------------------------
+2023/10/18 15:33:31 Log message 1
+2023/10/18 15:33:31 Log message 2
+2023/10/18 15:33:35 -----------------------Fetch Data----------------------
+2023/10/18 15:33:35 Successful in Fetching all the Data in Database
+2023/10/18 15:33:35 Host:  127.0.0.1:123
+2023/10/18 15:33:35 -----------------------END-----------------------------
+2023/10/18 15:34:47 -----------------------Fetch Data----------------------
+2023/10/18 15:34:47 Successful in Fetching all the Data in Database
+2023/10/18 15:34:47 Host:  127.0.0.1:123
+2023/10/18 15:34:47 [{1 Justiel Vinz C. Velasco justiel $2a$10$Yp.IupqYp0ywv820BqHSqu8LFO0lgS0VQC2Na8FM5SylK/fHPr1e. student} {2 Kate Maureen Hachaso Maui $2a$10$vC78UcRws8H/ZkEmtPaDbe7zdvy/RG1ATN3hZWDNC5fPFiL9G3QAu teacher} {3 Chienlo Mejia Longlong $2a$10$p097vwi2iv2/Q3l3h5vZjewSoU.A1vBAJbgGldAu8u0Y2sc1SWcy. teacher} {4 Chienlo Mejia Pewe $2a$10$5Yh99oJuJOyXO3FG1KUCQODtjqB.CYxDqRaoL/fDJhdu.TVYP3.02 teacher} {7 Jomari jj $2a$10$ZOXI7qsSMv9LOzCMDaKvGOSgvUL9v/uOQbPZrN.e0wNcmxxI5kFk. teacher}]
+2023/10/18 15:34:47 -----------------------END-----------------------------
+2023/10/18 15:34:56 -----------------------Fetch Data----------------------
+2023/10/18 15:34:56 Successful in Fetching all the Data in Database
+2023/10/18 15:34:56 Host:  127.0.0.1:123
+2023/10/18 15:34:56 -----------------------END-----------------------------
+2023/10/18 15:45:03 Log message 1
+2023/10/18 15:45:03 Log message 2
+2023/10/18 15:47:34 Log message 1
+2023/10/18 15:47:34 Log message 2
+2023/10/18 15:53:44 Log message 1
+2023/10/18 15:53:44 Log message 2
+2023/10/18 15:54:27 Log message 1
+2023/10/18 15:54:27 Log message 2
+2023/10/18 15:56:44 Log message 1
+2023/10/18 15:56:44 Log message 2
+2023/10/18 16:00:24 Log message 1
+2023/10/18 16:00:24 Log message 2
+2023/10/18 16:00:35 -----------------------Fetch Data----------------------
+2023/10/18 16:00:35 Successful in Fetching all the Data in Database
+2023/10/18 16:00:35 Host:  127.0.0.1:123
+2023/10/18 16:00:35 [{1 Justiel Vinz C. Velasco justiel $2a$10$Yp.IupqYp0ywv820BqHSqu8LFO0lgS0VQC2Na8FM5SylK/fHPr1e. student} {2 Kate Maureen Hachaso Maui $2a$10$vC78UcRws8H/ZkEmtPaDbe7zdvy/RG1ATN3hZWDNC5fPFiL9G3QAu teacher} {3 Chienlo Mejia Longlong $2a$10$p097vwi2iv2/Q3l3h5vZjewSoU.A1vBAJbgGldAu8u0Y2sc1SWcy. teacher} {4 Chienlo Mejia Pewe $2a$10$5Yh99oJuJOyXO3FG1KUCQODtjqB.CYxDqRaoL/fDJhdu.TVYP3.02 teacher} {7 Jomari jj $2a$10$ZOXI7qsSMv9LOzCMDaKvGOSgvUL9v/uOQbPZrN.e0wNcmxxI5kFk. teacher}]
+2023/10/18 16:00:35 -----------------------END-----------------------------
+2023/10/18 16:00:51 Log message 1
+2023/10/18 16:00:51 Log message 2
+2023/10/18 16:02:12 Log message 1
+2023/10/18 16:02:12 Log message 2
+2023/10/18 16:03:24 Log message 1
+2023/10/18 16:03:24 Log message 2
+2023/10/18 16:04:00 Log message 1
+2023/10/18 16:04:00 Log message 2
+2023/10/18 16:05:23 Log message 1
+2023/10/18 16:05:23 Log message 2
+2023/10/18 16:07:40 -----------------------Fetch Data----------------------
+2023/10/18 16:07:40 Successful in Fetching all the Data in Database
+2023/10/18 16:07:40 Host:  127.0.0.1:123
+2023/10/18 16:07:40 [{1 Justiel Vinz C. Velasco justiel $2a$10$Yp.IupqYp0ywv820BqHSqu8LFO0lgS0VQC2Na8FM5SylK/fHPr1e. student} {2 Kate Maureen Hachaso Maui $2a$10$vC78UcRws8H/ZkEmtPaDbe7zdvy/RG1ATN3hZWDNC5fPFiL9G3QAu teacher} {3 Chienlo Mejia Longlong $2a$10$p097vwi2iv2/Q3l3h5vZjewSoU.A1vBAJbgGldAu8u0Y2sc1SWcy. teacher} {4 Chienlo Mejia Pewe $2a$10$5Yh99oJuJOyXO3FG1KUCQODtjqB.CYxDqRaoL/fDJhdu.TVYP3.02 teacher} {7 Jomari jj $2a$10$ZOXI7qsSMv9LOzCMDaKvGOSgvUL9v/uOQbPZrN.e0wNcmxxI5kFk. teacher}]
+2023/10/18 16:07:40 -----------------------END-----------------------------
+2023/10/18 16:18:03 Log message 1
+2023/10/18 16:18:03 Log message 2
+2023/10/18 16:18:42 -----------------------Fetch Data----------------------
+2023/10/18 16:18:42 Successful in Fetching all the Data in Database
+2023/10/18 16:18:42 Host:  127.0.0.1:123
+2023/10/18 16:18:42 -----------------------END-----------------------------
+2023/10/18 16:27:47 Successful in Fetching all the Data in Database
+2023/10/18 16:28:04 -----------------------Fetch Data----------------------
+2023/10/18 16:28:04 Successful in Fetching all the Data in Database
+2023/10/18 16:28:04 Host:  127.0.0.1:123
+2023/10/18 16:28:04 -----------------------END-----------------------------
+2023/10/18 16:28:26 -----------------------Fetch Data----------------------
+2023/10/18 16:28:26 Successful in Fetching all the Data in Database
+2023/10/18 16:28:26 Host:  127.0.0.1:123
+2023/10/18 16:28:26 -----------------------END-----------------------------
+2023/10/18 16:33:51 -----------------------Fetch Data----------------------
+2023/10/18 16:33:51 Successful in Fetching all the Data in Database
+2023/10/18 16:33:51 Host:  127.0.0.1:123
+2023/10/18 16:33:51 [{1 Justiel Vinz C. Velasco justiel $2a$10$Yp.IupqYp0ywv820BqHSqu8LFO0lgS0VQC2Na8FM5SylK/fHPr1e. student} {2 Kate Maureen Hachaso Maui $2a$10$vC78UcRws8H/ZkEmtPaDbe7zdvy/RG1ATN3hZWDNC5fPFiL9G3QAu teacher} {3 Chienlo Mejia Longlong $2a$10$p097vwi2iv2/Q3l3h5vZjewSoU.A1vBAJbgGldAu8u0Y2sc1SWcy. teacher} {4 Chienlo Mejia Pewe $2a$10$5Yh99oJuJOyXO3FG1KUCQODtjqB.CYxDqRaoL/fDJhdu.TVYP3.02 teacher} {7 Jomari jj $2a$10$ZOXI7qsSMv9LOzCMDaKvGOSgvUL9v/uOQbPZrN.e0wNcmxxI5kFk. teacher} {8 n/a admin $2a$10$sV0IIRGwDKXCU8CZGmj.Cu5izhL43ybfk4i6lzY0/67w2PWFz5Ul6 teacher}]
+2023/10/18 16:33:51 -----------------------END-----------------------------
+2023/10/18 16:35:40 Log message 1
+2023/10/18 16:35:40 Log message 2
+2023/10/18 16:36:08 -----------------------Fetch Data----------------------
+2023/10/18 16:36:08 Successful in Fetching all the Data in Database
+2023/10/18 16:36:08 Host:  127.0.0.1:123
+2023/10/18 16:36:08 -----------------------END-----------------------------
