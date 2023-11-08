@@ -5,7 +5,6 @@ import (
 	"log"
 	"net/http"
 	database "sample/middleware/utils/database"
-	"sample/secret"
 	struct_test "sample/struct"
 
 	"github.com/gofiber/fiber/v2"
@@ -40,28 +39,6 @@ func Login(c *fiber.Ctx) error {
 		fmt.Printf("Password comparison failed: %v\n", err)
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Invalid username or password"})
 	}
-
-	// Generate a session token (UUID)
-	sessionToken := secret.GenerateSessionKey()
-
-	sess, sessErr := store.Get(c)
-	if sessErr != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"message": "something went wrong: in Storing the Session " + sessErr.Error(),
-		})
-	}
-
-	// Store the session token and additional data in the session
-	sess.Set("session_token", sessionToken)
-	sess.Set("username", storedUser.Username)
-
-	sessErr = sess.Save()
-	if sessErr != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"message": "something went wrong in saving the Session: " + sessErr.Error(),
-		})
-	}
-	fmt.Println("my Token: ", sessionToken)
 	log.Println("-----------------------Fetch Data----------------------")
 	log.Println("Successful in Fetching all the Data in Database")
 	log.Println("Host: ", c.Hostname())
@@ -69,7 +46,6 @@ func Login(c *fiber.Ctx) error {
 
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
 		"message":  "Login successful",
-		"token":    sessionToken,
 		"username": storedUser.Username,
 	})
 }

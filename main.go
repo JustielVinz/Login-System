@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"sample/account"
 	"sample/middleware"
 	"sample/routes"
 	"time"
@@ -21,7 +20,6 @@ import (
 func main() {
 
 	middleware.CreateConnection()
-	account.Setup()
 	// Create a new directory to store the log files, if it does not exist.
 	logsDir := "./logs"
 	err := os.MkdirAll(logsDir, os.ModePerm)
@@ -42,7 +40,7 @@ func main() {
 	// Set the output of the log to the file.
 	log.SetOutput(logfile)
 	app := fiber.New()
-	app.Use(account.NewMiddleware(), cors.New(cors.Config{
+	app.Use(cors.New(cors.Config{
 		AllowCredentials: true,
 		AllowOrigins:     "*",
 		AllowHeaders:     "Access-Control-Allow-Origin, Content-Type, Origin, Accept",

@@ -18,7 +18,6 @@ func SetupRoutes(app *fiber.App) {
 	auth.Get("/datainsert", account.GetData)
 	auth.Post("/signup", account.SetupAccount)
 	auth.Post("/login", account.Login)
-	auth.Post("/logout", account.Logout)
 	auth.Get("/:id", account.ParamData)
 	auth.Post("/encrypt", encryption.EncryptConn)
 
