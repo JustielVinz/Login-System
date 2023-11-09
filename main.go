@@ -17,6 +17,7 @@ import (
 // @Title			Log In System
 // @Version		1.16.2
 // @Description	Log in Code for Go session
+// @BasePath		/auth
 func main() {
 
 	middleware.CreateConnection()

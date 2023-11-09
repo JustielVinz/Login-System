@@ -15,7 +15,45 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/auth/signup": {
+        "/login": {
+            "post": {
+                "description": "The user will log in the data here",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Log in"
+                ],
+                "summary": "Login the user and fetch the data",
+                "operationId": "log in UI",
+                "parameters": [
+                    {
+                        "description": "Login",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/struct_test.AdminAcc"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok\"\t\"返回用户信息",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/signup": {
             "post": {
                 "description": "The user will create an Account",
                 "consumes": [
@@ -51,6 +89,44 @@ const docTemplate = `{
                         "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/struct_test.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/{id}": {
+            "post": {
+                "description": "Gather the specific data that user wants",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Parameter"
+                ],
+                "summary": "Fecth the data",
+                "operationId": "Parameter ID",
+                "parameters": [
+                    {
+                        "description": "Fetch Success",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/struct_test.AdminAcc"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok\"\t\"返回用户信息",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 }
@@ -94,7 +170,7 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.16.2",
 	Host:             "",
-	BasePath:         "",
+	BasePath:         "/auth",
 	Schemes:          []string{},
 	Title:            "Log In System",
 	Description:      "Log in Code for Go session",

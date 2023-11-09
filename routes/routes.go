@@ -15,10 +15,8 @@ func SetupRoutes(app *fiber.App) {
 	app.Get("/goroutine_docs/*", swagger.HandlerDefault)
 
 	auth := app.Group("/auth")
-	auth.Get("/datainsert", account.GetData)
+	auth.Post("/register",account.SetupAccount)
 	auth.Post("/signup", account.SetupAccount)
-	auth.Post("/login", account.Login)
-	auth.Get("/:id", account.ParamData)
 	auth.Post("/encrypt", encryption.EncryptConn)
 
 }
