@@ -8,7 +8,14 @@ type AdminAcc struct {
 	Name       string `json:"name"`
 	Department string `json:"department"`
 	Password   string `json:"password"`
+	UserType   string `json:"user_work"`
 }
-type ErrorResponse struct {
-	Error string `json:"error"`
+type Student struct {
+	ID            int    `json:"id"`
+	Name          string `json:"name"`
+	StudentID     int    `json:"student_id"`
+	Department    string `json:"department"`
+	Miscellaneous string `json:"miscellaneous"`
+	Payment       int    `json:"payment_method"`
+	Amount        int    `json:"amount"`
 }

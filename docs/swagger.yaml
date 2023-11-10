@@ -1,105 +1,114 @@
 basePath: /auth
 definitions:
+  errors.ErrorModel:
+    properties:
+      error: {}
+      isSuccess:
+        type: boolean
+      message:
+        type: string
+    type: object
   struct_test.AdminAcc:
     description: struct for getting the credentials
     properties:
+      department:
+        type: string
       id:
         type: integer
       name:
         type: string
       password:
         type: string
-      role:
-        type: string
-      username:
+      user_work:
         type: string
     type: object
-  struct_test.ErrorResponse:
+  struct_test.Student:
     properties:
-      error:
+      amount:
+        type: integer
+      department:
         type: string
+      id:
+        type: integer
+      miscellaneous:
+        type: string
+      name:
+        type: string
+      payment_method:
+        type: integer
+      student_id:
+        type: integer
     type: object
 info:
   contact: {}
-  description: Log in Code for Go session
-  title: Log In System
+  description: UI testing for Payment Method
+  title: Finance Web Application
   version: 1.16.2
 paths:
-  /{id}:
-    post:
-      description: Gather the specific data that user wants
-      operationId: Parameter ID
-      parameters:
-      - description: Fetch Success
-        in: body
-        name: request
-        required: true
-        schema:
-          $ref: '#/definitions/struct_test.AdminAcc'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: "ok\"\t\"返回用户信息"
-          schema:
-            type: string
-        "400":
-          description: Bad Request
-          schema:
-            type: string
-      summary: Fecth the data
-      tags:
-      - Parameter
-  /login:
-    post:
-      description: The user will log in the data here
-      operationId: log in UI
-      parameters:
-      - description: Login
-        in: body
-        name: request
-        required: true
-        schema:
-          $ref: '#/definitions/struct_test.AdminAcc'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: "ok\"\t\"返回用户信息"
-          schema:
-            type: string
-        "400":
-          description: Bad Request
-          schema:
-            type: string
-      summary: Login the user and fetch the data
-      tags:
-      - Log in
-  /signup:
+  /register/teacher:
     post:
       consumes:
       - application/json
-      description: The user will create an Account
-      operationId: createAccount
+      description: Create a new teacher account with the provided data.
       parameters:
-      - description: Create  Account
+      - description: Teacher data to be created
         in: body
-        name: request
+        name: teacher
         required: true
         schema:
           $ref: '#/definitions/struct_test.AdminAcc'
       produces:
       - application/json
       responses:
-        "200":
-          description: OK
+        "201":
+          description: Created
           schema:
             $ref: '#/definitions/struct_test.AdminAcc'
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           schema:
-            $ref: '#/definitions/struct_test.ErrorResponse'
-      summary: Set up the Account
+            $ref: '#/definitions/errors.ErrorModel'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorModel'
+      security:
+      - JWT: []
+      summary: Create a new teacher account
       tags:
-      - Creating New Account
+      - Teachers
+  /students:
+    post:
+      consumes:
+      - application/json
+      description: Create a new student account with the provided data
+      parameters:
+      - description: Student data to be created
+        in: body
+        name: student
+        required: true
+        schema:
+          $ref: '#/definitions/struct_test.Student'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/struct_test.Student'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorModel'
+      summary: Create a new student account
+      tags:
+      - Students
 swagger: "2.0"

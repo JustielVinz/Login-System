@@ -4,8 +4,10 @@ go 1.21.2
 
 require (
 	github.com/arsmn/fiber-swagger/v2 v2.31.1
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/gofiber/fiber/v2 v2.50.0
+	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/google/uuid v1.3.1
 	github.com/gorilla/sessions v1.2.1
 	github.com/joho/godotenv v1.5.1

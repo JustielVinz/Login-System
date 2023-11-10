@@ -15,47 +15,14 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/login": {
+        "/register/teacher": {
             "post": {
-                "description": "The user will log in the data here",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Log in"
-                ],
-                "summary": "Login the user and fetch the data",
-                "operationId": "log in UI",
-                "parameters": [
+                "security": [
                     {
-                        "description": "Login",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/struct_test.AdminAcc"
-                        }
+                        "JWT": []
                     }
                 ],
-                "responses": {
-                    "200": {
-                        "description": "ok\"\t\"返回用户信息",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/signup": {
-            "post": {
-                "description": "The user will create an Account",
+                "description": "Create a new teacher account with the provided data.",
                 "consumes": [
                     "application/json"
                 ],
@@ -63,14 +30,13 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Creating New Account"
+                    "Teachers"
                 ],
-                "summary": "Set up the Account",
-                "operationId": "createAccount",
+                "summary": "Create a new teacher account",
                 "parameters": [
                     {
-                        "description": "Create  Account",
-                        "name": "request",
+                        "description": "Teacher data to be created",
+                        "name": "teacher",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -79,54 +45,74 @@ const docTemplate = `{
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK",
+                    "201": {
+                        "description": "Created",
                         "schema": {
                             "$ref": "#/definitions/struct_test.AdminAcc"
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "schema": {
-                            "$ref": "#/definitions/struct_test.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/{id}": {
-            "post": {
-                "description": "Gather the specific data that user wants",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Parameter"
-                ],
-                "summary": "Fecth the data",
-                "operationId": "Parameter ID",
-                "parameters": [
-                    {
-                        "description": "Fetch Success",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/struct_test.AdminAcc"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "ok\"\t\"返回用户信息",
-                        "schema": {
-                            "type": "string"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/errors.ErrorModel"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/errors.ErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/errors.ErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/students": {
+            "post": {
+                "description": "Create a new student account with the provided data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Create a new student account",
+                "parameters": [
+                    {
+                        "description": "Student data to be created",
+                        "name": "student",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/struct_test.Student"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/struct_test.Student"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/errors.ErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/errors.ErrorModel"
                         }
                     }
                 }
@@ -134,10 +120,25 @@ const docTemplate = `{
         }
     },
     "definitions": {
+        "errors.ErrorModel": {
+            "type": "object",
+            "properties": {
+                "error": {},
+                "isSuccess": {
+                    "type": "boolean"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "struct_test.AdminAcc": {
             "description": "struct for getting the credentials",
             "type": "object",
             "properties": {
+                "department": {
+                    "type": "string"
+                },
                 "id": {
                     "type": "integer"
                 },
@@ -147,19 +148,34 @@ const docTemplate = `{
                 "password": {
                     "type": "string"
                 },
-                "role": {
-                    "type": "string"
-                },
-                "username": {
+                "user_work": {
                     "type": "string"
                 }
             }
         },
-        "struct_test.ErrorResponse": {
+        "struct_test.Student": {
             "type": "object",
             "properties": {
-                "error": {
+                "amount": {
+                    "type": "integer"
+                },
+                "department": {
                     "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "miscellaneous": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "payment_method": {
+                    "type": "integer"
+                },
+                "student_id": {
+                    "type": "integer"
                 }
             }
         }
@@ -172,8 +188,8 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "",
 	BasePath:         "/auth",
 	Schemes:          []string{},
-	Title:            "Log In System",
-	Description:      "Log in Code for Go session",
+	Title:            "Finance Web Application",
+	Description:      "UI testing for Payment Method",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

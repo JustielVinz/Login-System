@@ -14,9 +14,9 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/recover"
 )
 
-// @Title			Log In System
+// @Title			Finance Web Application
 // @Version		1.16.2
-// @Description	Log in Code for Go session
+// @Description	UI testing for Payment Method
 // @BasePath		/auth
 func main() {
 
