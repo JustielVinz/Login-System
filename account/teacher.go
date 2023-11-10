@@ -15,12 +15,15 @@ import (
 // SetupTeacherAccount godoc
 //
 //	@Summary		Create a new teacher account
-//	@Description	Create a new teacher account with the provided data.
+//	@Descri ption	Create a new teacher account with the provided data.
 //	@Tags			Teachers
 //	@Accept			json
 //	@Produce		json
 //	@Param			teacher	body	struct_test.AdminAcc	true	"Teacher data to be created"
-//	@Security		JWT
+//
+// @Security ApiKeyAuth
+// @SecurityDefinitions ApiKeyAuth JWT
+//
 //	@Success		201	{object}	struct_test.AdminAcc
 //	@Failure		400	{object}	errors.ErrorModel
 //	@Failure		401	{object}	errors.ErrorModel

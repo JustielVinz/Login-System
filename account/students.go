@@ -12,6 +12,7 @@ import (
 )
 
 // SetupStudentAccount godoc
+//
 //	@Summary		Create a new student account
 //	@Description	Create a new student account with the provided data
 //	@Tags			Students
