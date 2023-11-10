@@ -23,6 +23,7 @@ func SetupRoutes(app *fiber.App) {
 	auth.Get("/protected", secret.Authenticate, function.ProtectedEndpoint)
 
 	secure := app.Group("/secure")
-	secure.Post("/loginhandler", account.RegisterHandler)
+	secure.Post("/signup", account.RegisterHandler)
+	secure.Post("/login", account.LoginHandler)
 
 }
