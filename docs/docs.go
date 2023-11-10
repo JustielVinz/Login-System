@@ -19,7 +19,7 @@ const docTemplate = `{
             "post": {
                 "security": [
                     {
-                        "JWT": []
+                        "ApiKeyAuth": []
                     }
                 ],
                 "description": "Create a new teacher account with the provided data.",

@@ -77,7 +77,7 @@ paths:
           schema:
             $ref: '#/definitions/errors.ErrorModel'
       security:
-      - JWT: []
+      - ApiKeyAuth: []
       summary: Create a new teacher account
       tags:
       - Teachers
