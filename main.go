@@ -14,10 +14,13 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/recover"
 )
 
-// @Title			Finance Web Application
-// @Version		1.16.2
-// @Description	UI testing for Payment Method
-// @BasePath		/auth
+// @Title						Finance Web Application
+// @Version					1.16.2
+// @Description				UI testing for Payment Method
+// @Basepath					/auth/
+// @securityDefinitions.apikey	JWT-Token
+// @in							header
+// @name						Authorization
 func main() {
 
 	middleware.CreateConnection()

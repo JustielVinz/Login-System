@@ -1,4 +1,4 @@
-basePath: /auth
+basePath: /auth/
 definitions:
   errors.ErrorModel:
     properties:
@@ -8,18 +8,17 @@ definitions:
       message:
         type: string
     type: object
+  security.SecretKey:
+    properties:
+      secret_key:
+        type: string
+    type: object
   struct_test.AdminAcc:
     description: struct for getting the credentials
     properties:
       department:
         type: string
-      id:
-        type: integer
       name:
-        type: string
-      password:
-        type: string
-      user_work:
         type: string
     type: object
   struct_test.Student:
@@ -49,21 +48,51 @@ paths:
     post:
       consumes:
       - application/json
-      description: Create a new teacher account with the provided data.
+      description: Add a new teacher to the database
       parameters:
-      - description: Teacher data to be created
+      - description: Enter the Description
         in: body
-        name: teacher
+        name: department
         required: true
         schema:
           $ref: '#/definitions/struct_test.AdminAcc'
       produces:
       - application/json
       responses:
-        "201":
-          description: Created
+        "200":
+          description: Teacher added successfully
           schema:
-            $ref: '#/definitions/struct_test.AdminAcc'
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorModel'
+      security:
+      - JWT-Token: []
+      summary: Create a new teacher
+      tags:
+      - teachers
+  /secure/login:
+    post:
+      description: Auto generate secret key
+      parameters:
+      - description: Username
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: Password
+        in: formData
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successfully accessed
+          schema:
+            type: string
         "400":
           description: Bad Request
           schema:
@@ -72,15 +101,11 @@ paths:
           description: Unauthorized
           schema:
             $ref: '#/definitions/errors.ErrorModel'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/errors.ErrorModel'
       security:
-      - ApiKeyAuth: []
-      summary: Create a new teacher account
+      - JWT-Token: []
+      summary: It will generate the key that will use to log-in in swagger
       tags:
-      - Teachers
+      - Admin
   /students:
     post:
       consumes:
@@ -111,4 +136,9 @@ paths:
       summary: Create a new student account
       tags:
       - Students
+securityDefinitions:
+  JWT-Token:
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"

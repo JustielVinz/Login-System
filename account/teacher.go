@@ -2,58 +2,39 @@
 package account
 
 import (
-	"encoding/json"
-	"sample/function"
 	"sample/middleware/utils/database"
 	struct_test "sample/struct"
 	errors "sample/struct/error"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"golang.org/x/crypto/bcrypt"
 )
 
-// SetupTeacherAccount godoc
+// SetupTeacherAccount
+
+// @Summary		Create a new teacher
+// @Description	Add a new teacher to the database
+// @Tags			teachers
+// @Accept			json
+// @Produce		json
+// @Param			department	body		struct_test.AdminAcc	true	"Enter the Description"
+// @Success		200			{object}	string					"Teacher added successfully"
+// @Failure		400			{object}	errors.ErrorModel
 //
-//	@Summary		Create a new teacher account
-//	@Descri ption	Create a new teacher account with the provided data.
-//	@Tags			Teachers
-//	@Accept			json
-//	@Produce		json
-//	@Param			teacher	body	struct_test.AdminAcc	true	"Teacher data to be created"
-//
-// @Security ApiKeyAuth
-// @SecurityDefinitions ApiKeyAuth JWT
-//
-//	@Success		201	{object}	struct_test.AdminAcc
-//	@Failure		400	{object}	errors.ErrorModel
-//	@Failure		401	{object}	errors.ErrorModel
-//	@Failure		500	{object}	errors.ErrorModel
-//	@Router			/register/teacher [post]
-//	@Note			To access this endpoint, you must provide a valid JWT token in the "Authorization" header of your request.
+// @Router			/register/teacher [post]
+// @Security		JWT-Token
+// @Note			To access this endpoint, you must provide a valid JWT token in the "Authorization" header of your request.
 func SetupTeacherAccount(c *fiber.Ctx) error {
 	newTeacher := struct_test.AdminAcc{}
-	currentTime := function.GetTime
-
-	// Decode the JSON request body into the AdminAcc struct
-	err := json.Unmarshal(c.Body(), &newTeacher)
-	if err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(errors.ErrorModel{
-			Message:   "Error decoding request body",
-			IsSuccess: false,
-		})
+	// Get the current time
+	currentTime := time.Now()
+	// Format and print the current time
+	Exactime := currentTime.Format("2006-01-02 15:04:05")
+	if err := c.BodyParser(&newTeacher); err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid request body"})
 	}
-
-	// Hash the password before storing it in the database
-	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(newTeacher.Password), bcrypt.DefaultCost)
-	if err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(errors.ErrorModel{
-			Message:   "Error hashing password",
-			IsSuccess: false,
-		})
-	}
-
 	// Insert teacher data
-	if err := database.DBConn.Debug().Raw("INSERT INTO teacher (id, name, department, password, created_at) VALUES (?,?,?,?,?)", newTeacher.ID, newTeacher.Name, newTeacher.Department, hashedPassword, currentTime).Scan(&newTeacher).Error; err != nil {
+	if err := database.DBConn.Debug().Raw("INSERT INTO teacher (name, department, created_at) VALUES (?,?,?)", newTeacher.Name, newTeacher.Department, Exactime).Scan(&newTeacher).Error; err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(errors.ErrorModel{
 			Message:   "Error in inserting teacher data",
 			IsSuccess: false,

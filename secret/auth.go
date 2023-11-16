@@ -1,4 +1,3 @@
-
 package secret
 
 import (

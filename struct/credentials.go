@@ -4,11 +4,8 @@ package struct_test
 // @Description	struct for getting the credentials
 // @Tags			credentials
 type AdminAcc struct {
-	ID         int    `json:"id"`
 	Name       string `json:"name"`
 	Department string `json:"department"`
-	Password   string `json:"password"`
-	UserType   string `json:"user_work"`
 }
 type Student struct {
 	ID            int    `json:"id"`

@@ -19,10 +19,10 @@ const docTemplate = `{
             "post": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "JWT-Token": []
                     }
                 ],
-                "description": "Create a new teacher account with the provided data.",
+                "description": "Add a new teacher to the database",
                 "consumes": [
                     "application/json"
                 ],
@@ -30,13 +30,13 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Teachers"
+                    "teachers"
                 ],
-                "summary": "Create a new teacher account",
+                "summary": "Create a new teacher",
                 "parameters": [
                     {
-                        "description": "Teacher data to be created",
-                        "name": "teacher",
+                        "description": "Enter the Description",
+                        "name": "department",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -45,10 +45,57 @@ const docTemplate = `{
                     }
                 ],
                 "responses": {
-                    "201": {
-                        "description": "Created",
+                    "200": {
+                        "description": "Teacher added successfully",
                         "schema": {
-                            "$ref": "#/definitions/struct_test.AdminAcc"
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/errors.ErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/secure/login": {
+            "post": {
+                "security": [
+                    {
+                        "JWT-Token": []
+                    }
+                ],
+                "description": "Auto generate secret key",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "It will generate the key that will use to log-in in swagger",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Username",
+                        "name": "username",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Password",
+                        "name": "password",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully accessed",
+                        "schema": {
+                            "type": "string"
                         }
                     },
                     "400": {
@@ -59,12 +106,6 @@ const docTemplate = `{
                     },
                     "401": {
                         "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/errors.ErrorModel"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
                         "schema": {
                             "$ref": "#/definitions/errors.ErrorModel"
                         }
@@ -132,6 +173,14 @@ const docTemplate = `{
                 }
             }
         },
+        "security.SecretKey": {
+            "type": "object",
+            "properties": {
+                "secret_key": {
+                    "type": "string"
+                }
+            }
+        },
         "struct_test.AdminAcc": {
             "description": "struct for getting the credentials",
             "type": "object",
@@ -139,16 +188,7 @@ const docTemplate = `{
                 "department": {
                     "type": "string"
                 },
-                "id": {
-                    "type": "integer"
-                },
                 "name": {
-                    "type": "string"
-                },
-                "password": {
-                    "type": "string"
-                },
-                "user_work": {
                     "type": "string"
                 }
             }
@@ -179,6 +219,13 @@ const docTemplate = `{
                 }
             }
         }
+    },
+    "securityDefinitions": {
+        "JWT-Token": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
     }
 }`
 
@@ -186,7 +233,7 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.16.2",
 	Host:             "",
-	BasePath:         "/auth",
+	BasePath:         "/auth/",
 	Schemes:          []string{},
 	Title:            "Finance Web Application",
 	Description:      "UI testing for Payment Method",
