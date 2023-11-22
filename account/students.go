@@ -4,6 +4,7 @@ package account
 import (
 	"encoding/json"
 	"sample/function"
+	querywarehouse "sample/middleware/queryWarehouse"
 	"sample/middleware/utils/database"
 	struct_test "sample/struct"
 	errors "sample/struct/error"
@@ -24,6 +25,7 @@ import (
 //	@Failure		500		{object}	errors.ErrorModel
 //	@Router			/students [post]
 func SetupStudentAccount(c *fiber.Ctx) error {
+	student := querywarehouse.StudentLogin
 	newStudent := struct_test.Student{}
 	currentTime := function.GetTime
 
@@ -36,7 +38,7 @@ func SetupStudentAccount(c *fiber.Ctx) error {
 		})
 	}
 	// Insert student data
-	if err := database.DBConn.Debug().Raw("INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (?,?,?,?,?,?,?,?,?)", newStudent.ID, newStudent.Name, newStudent.StudentID, newStudent.Department, newStudent.Miscellaneous, newStudent.Payment, newStudent.Amount, currentTime).Scan(&newStudent).Error; err != nil {
+	if err := database.DBConn.Debug().Raw(student, newStudent.ID, newStudent.Name, newStudent.StudentID, newStudent.Department, newStudent.Miscellaneous, newStudent.Payment, newStudent.Amount, currentTime).Scan(&newStudent).Error; err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(errors.ErrorModel{
 			Message:   "Error in inserting student data",
 			IsSuccess: false,

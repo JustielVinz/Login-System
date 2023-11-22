@@ -1,6 +1,7 @@
 package account
 
 import (
+	querywarehouse "sample/middleware/queryWarehouse"
 	"sample/middleware/utils/database"
 	errors "sample/struct/error"
 	"sample/struct/security"
@@ -11,6 +12,7 @@ import (
 )
 
 func RegisterHandler(c *fiber.Ctx) error {
+	keyAdmin := querywarehouse.AdminKey
 	admin := security.User{}
 	// Get the current time
 	currentTime := time.Now()
@@ -29,7 +31,7 @@ func RegisterHandler(c *fiber.Ctx) error {
 	}
 
 	// Insert the user into the database
-	if err := database.DBConn.Debug().Raw("INSERT INTO credentials (id, username, password, status, created_at) VALUES (?,?, ?, ?, ?)", admin.ID, admin.Username, hashedPassword, admin.Status, Exactime).Scan(&admin).Error; err != nil {
+	if err := database.DBConn.Debug().Raw(keyAdmin, admin.ID, admin.Username, hashedPassword, admin.Status, Exactime).Scan(&admin).Error; err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(errors.ErrorModel{
 			Message:   "Error in inserting user data",
 			IsSuccess: false,

@@ -24,5 +24,6 @@ func SetupRoutes(app *fiber.App) {
 	secure := auth.Group("/secure")
 	secure.Post("/signup", account.RegisterHandler)
 	secure.Post("/login", account.LoginHandler)
+	secure.Get("/data", account.FetchData)
 
 }

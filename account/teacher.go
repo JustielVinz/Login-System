@@ -2,6 +2,7 @@
 package account
 
 import (
+	querywarehouse "sample/middleware/queryWarehouse"
 	"sample/middleware/utils/database"
 	struct_test "sample/struct"
 	errors "sample/struct/error"
@@ -25,6 +26,7 @@ import (
 // @Security		JWT-Token
 // @Note			To access this endpoint, you must provide a valid JWT token in the "Authorization" header of your request.
 func SetupTeacherAccount(c *fiber.Ctx) error {
+	dataInsert := querywarehouse.InsertData
 	newTeacher := struct_test.AdminAcc{}
 	// Get the current time
 	currentTime := time.Now()
@@ -34,7 +36,7 @@ func SetupTeacherAccount(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid request body"})
 	}
 	// Insert teacher data
-	if err := database.DBConn.Debug().Raw("INSERT INTO teacher (name, department, created_at) VALUES (?,?,?)", newTeacher.Name, newTeacher.Department, Exactime).Scan(&newTeacher).Error; err != nil {
+	if err := database.DBConn.Debug().Raw(dataInsert, newTeacher.Name, newTeacher.Department, Exactime).Scan(&newTeacher).Error; err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(errors.ErrorModel{
 			Message:   "Error in inserting teacher data",
 			IsSuccess: false,

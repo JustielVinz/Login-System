@@ -1,6 +1,7 @@
 package account
 
 import (
+	querywarehouse "sample/middleware/queryWarehouse"
 	"sample/middleware/utils/database"
 	"sample/struct/security"
 	"time"
@@ -26,15 +27,14 @@ type JWTClaims struct {
 //	@Param			username	formData	string	true	"Username"
 //	@Param			password	formData	string	true	"Password"
 //	@Tags			Admin
-//
 //	@Security		JWT-Token
-//
 //	@Success		200	{object}	security.SecretKey
 //	@Success		200	{string}	string	"Successfully accessed"
 //	@Failure		400	{object}	errors.ErrorModel
 //	@Failure		401	{object}	errors.ErrorModel
 //	@Router			/secure/login [post]
 func LoginHandler(c *fiber.Ctx) error {
+	userkey := querywarehouse.KeyGenerator
 	requestBody := security.Identification{}
 	// Parse JSON request body
 	if err := c.BodyParser(&requestBody); err != nil {
@@ -43,7 +43,7 @@ func LoginHandler(c *fiber.Ctx) error {
 
 	// Retrieve user from the database based on the username
 	var user security.User
-	if err := database.DBConn.Debug().Raw("SELECT username, password  FROM credentials WHERE username = ?", requestBody.Username).First(&user).Error; err != nil {
+	if err := database.DBConn.Debug().Raw(userkey, requestBody.Username).First(&user).Error; err != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Invalid credentials"})
 	}
 
