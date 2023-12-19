@@ -23,13 +23,11 @@ func RegisterHandler(c *fiber.Ctx) error {
 	if err := c.BodyParser(&admin); err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid request body"})
 	}
-
 	// Hash the password before storing it
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(admin.Password), bcrypt.DefaultCost)
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to hash password"})
 	}
-
 	// Insert the user into the database
 	if err := database.DBConn.Debug().Raw(keyAdmin, admin.ID, admin.Username, hashedPassword, admin.Status, Exactime).Scan(&admin).Error; err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(errors.ErrorModel{

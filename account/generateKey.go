@@ -46,7 +46,7 @@ func LoginHandler(c *fiber.Ctx) error {
 	if err := database.DBConn.Debug().Raw(userkey, requestBody.Username).First(&user).Error; err != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Invalid credentials"})
 	}
-
+	
 	// Compare the provided password with the hashed password from the database
 	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(requestBody.Password)); err != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Invalid credentials"})
