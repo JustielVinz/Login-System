@@ -3,11 +3,11 @@ package account
 
 import (
 	"encoding/json"
-	"sample/function"
 	querywarehouse "sample/middleware/queryWarehouse"
 	"sample/middleware/utils/database"
 	struct_test "sample/struct"
 	errors "sample/struct/error"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -27,7 +27,8 @@ import (
 func SetupStudentAccount(c *fiber.Ctx) error {
 	student := querywarehouse.StudentLogin
 	newStudent := struct_test.Student{}
-	currentTime := function.GetTime
+	currentTime := time.Now()
+	formattedTime := currentTime.Format("2006-01-02 15:04:05")
 
 	// Decode the JSON request body into the Student struct
 	err := json.Unmarshal(c.Body(), &newStudent)
@@ -38,7 +39,7 @@ func SetupStudentAccount(c *fiber.Ctx) error {
 		})
 	}
 	// Insert student data
-	if err := database.DBConn.Debug().Raw(student, newStudent.ID, newStudent.Name, newStudent.StudentID, newStudent.Department, newStudent.Miscellaneous, newStudent.Payment, newStudent.Amount, currentTime).Scan(&newStudent).Error; err != nil {
+	if err := database.DBConn.Debug().Raw(student, newStudent.Name, newStudent.StudentID, newStudent.Department, newStudent.Miscellaneous, newStudent.Payment, newStudent.Amount, formattedTime).Scan(&newStudent).Error; err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(errors.ErrorModel{
 			Message:   "Error in inserting student data",
 			IsSuccess: false,

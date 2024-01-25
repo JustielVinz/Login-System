@@ -1,0 +1,242 @@
+
+2024/01/23 08:31:05 [35m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/middleware/utils/database/database.go:50
+[0m[31m[error] [0mfailed to initialize database, got error failed to connect to `host=localhost user=postgres database=finance_database`: server error (FATAL: database "finance_database" does not exist (SQLSTATE 3D000))
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID .............. 2390 │ 
+ └───────────────────────────────────────────────────┘ 
+
+signal: interrupt
+nohup: run: No such file or directory
+nohup: main.go: No such file or directory
+nohup: main.go: No such file or directory
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID ............. 13709 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2024/01/24 15:49:08 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/teacher.go:39 [35;1mERROR: relation "teacher" does not exist (SQLSTATE 42P01)
+[0m[33m[15.977ms] [34;1m[rows:-][0m INSERT INTO teacher (name, department, created_at) VALUES ('long','','2024-01-24 15:49:08')
+15:49:08 | 500 |    17.82425ms | 127.0.0.1 | POST | /auth/register/teacher | -
+signal: interrupt
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID ............. 13954 │ 
+ └───────────────────────────────────────────────────┘ 
+
+signal: interrupt
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID ............. 14008 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2024/01/24 15:51:42 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/teacher.go:39 [35;1mERROR: column "created_at" of relation "credentials" does not exist (SQLSTATE 42703)
+[0m[33m[5.359ms] [34;1m[rows:-][0m INSERT INTO credentials (name, department, created_at) VALUES ('long','','2024-01-24 15:51:42')
+15:51:42 | 500 |    6.748791ms | 127.0.0.1 | POST | /auth/register/teacher | -
+
+2024/01/24 15:51:44 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/teacher.go:39 [35;1mERROR: column "created_at" of relation "credentials" does not exist (SQLSTATE 42703)
+[0m[33m[1.054ms] [34;1m[rows:-][0m INSERT INTO credentials (name, department, created_at) VALUES ('long','','2024-01-24 15:51:44')
+15:51:44 | 500 |    1.196792ms | 127.0.0.1 | POST | /auth/register/teacher | -
+signal: interrupt
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID ............. 14161 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2024/01/24 15:52:16 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/teacher.go:39 [35;1mERROR: column "created_at" of relation "credentials" does not exist (SQLSTATE 42703)
+[0m[33m[3.813ms] [34;1m[rows:-][0m INSERT INTO credentials (name, department, created_at) VALUES ('long','','2024-01-24 15:52:16')
+15:52:16 | 500 |    4.861541ms | 127.0.0.1 | POST | /auth/register/teacher | -
+
+2024/01/24 15:52:17 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/teacher.go:39 [35;1mERROR: column "created_at" of relation "credentials" does not exist (SQLSTATE 42703)
+[0m[33m[0.874ms] [34;1m[rows:-][0m INSERT INTO credentials (name, department, created_at) VALUES ('long','','2024-01-24 15:52:17')
+15:52:17 | 500 |    1.566916ms | 127.0.0.1 | POST | /auth/register/teacher | -
+
+2024/01/24 15:53:40 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/teacher.go:39 [35;1mERROR: relation "credentials" does not exist (SQLSTATE 42P01)
+[0m[33m[3.717ms] [34;1m[rows:-][0m INSERT INTO credentials (name, department, created_at) VALUES ('long','','2024-01-24 15:53:40')
+15:53:40 | 500 |    4.594333ms | 127.0.0.1 | POST | /auth/register/teacher | -
+signal: interrupt
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID ............. 14362 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2024/01/24 15:56:39 [32m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/teacher.go:39
+[0m[33m[18.138ms] [34;1m[rows:0][0m INSERT INTO teacher (name, department, created_at) VALUES ('long','COE','2024-01-24 15:56:39')
+15:56:39 | 201 |   19.799084ms | 127.0.0.1 | POST | /auth/register/teacher | -
+signal: interrupt
+nohup: main.go: No such file or directory
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID .............. 3036 │ 
+ └───────────────────────────────────────────────────┘ 
+
+09:39:42 | 404 |    3.116542ms | 127.0.0.1 | POST | /param/parameters/ | Cannot POST /param/parameters/
+09:40:02 | 404 |      27.333µs | 127.0.0.1 | POST | /auth/create | Cannot POST /auth/create
+09:40:40 | 404 |      85.084µs | 127.0.0.1 | POST | /register/student | Cannot POST /register/student
+09:42:21 | 404 |       35.75µs | 127.0.0.1 | POST | /register/student | Cannot POST /register/student
+09:42:25 | 404 |        11.5µs | 127.0.0.1 | POST | /register/student | Cannot POST /register/student
+09:42:25 | 404 |      16.708µs | 127.0.0.1 | POST | /register/student | Cannot POST /register/student
+09:42:26 | 404 |      10.625µs | 127.0.0.1 | POST | /register/student | Cannot POST /register/student
+
+2024/01/25 09:42:35 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:41 [35;1mERROR: syntax error at or near ")" (SQLSTATE 42601)
+[0m[33m[26.345ms] [34;1m[rows:-][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (6,'Glen',1235234242,'COE','TOR',1000,50000,'0x103571310',?)
+09:42:35 | 500 |   40.550875ms | 127.0.0.1 | POST | /auth/register/student | -
+signal: interrupt
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID .............. 3818 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2024/01/25 09:44:19 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:41 [35;1mERROR: column "created_at" of relation "student" does not exist (SQLSTATE 42703)
+[0m[33m[50.450ms] [34;1m[rows:-][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (6,'Glen',1235234242,'COE','TOR',1000,50000,'0x10346d310')
+09:44:19 | 500 |   51.553333ms | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 09:44:20 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:41 [35;1mERROR: column "created_at" of relation "student" does not exist (SQLSTATE 42703)
+[0m[33m[0.770ms] [34;1m[rows:-][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (6,'Glen',1235234242,'COE','TOR',1000,50000,'0x10346d310')
+09:44:20 | 500 |         956µs | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 09:46:29 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:41 [35;1mfailed to encode args[7]: unable to encode (func(*fiber.Ctx) error)(0x10346d310) into binary format for timestamp (OID 1114): cannot find encode plan
+[0m[33m[23.938ms] [34;1m[rows:-][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (6,'Glen',1235234242,'COE','TOR',1000,50000,'0x10346d310')
+09:46:29 | 500 |    36.05925ms | 127.0.0.1 | POST | /auth/register/student | -
+signal: interrupt
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID .............. 4226 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2024/01/25 09:49:55 [32m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:41
+[0m[33m[31.137ms] [34;1m[rows:0][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (6,'Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 09:49:55.706')
+09:49:55 | 201 |      31.864ms | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 09:50:55 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:41 [35;1mERROR: duplicate key value violates unique constraint "student_pkey" (SQLSTATE 23505)
+[0m[33m[6.613ms] [34;1m[rows:-][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (6,'Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 09:50:55.506')
+09:50:55 | 500 |    6.980666ms | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 09:51:21 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:41 [35;1mERROR: duplicate key value violates unique constraint "student_pkey" (SQLSTATE 23505)
+[0m[33m[4.324ms] [34;1m[rows:-][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (6,'Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 09:51:21.427')
+09:51:21 | 500 |    4.892708ms | 127.0.0.1 | POST | /auth/register/student | -
+signal: interrupt
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID .............. 4407 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2024/01/25 09:52:41 [32m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:42
+[0m[33m[18.616ms] [34;1m[rows:0][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (7,'Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 09:52:41')
+09:52:41 | 201 |   19.640208ms | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 09:59:27 [32m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:42
+[0m[33m[15.069ms] [34;1m[rows:0][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (0,'Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 09:59:27')
+09:59:27 | 201 |   31.366708ms | 127.0.0.1 | POST | /auth/register/student | -
+signal: interrupt
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID .............. 4629 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2024/01/25 10:01:03 [32m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:42
+[0m[33m[20.896ms] [34;1m[rows:0][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (0,'Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 10:01:03')
+10:01:03 | 201 |   22.364958ms | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 10:02:51 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:42 [35;1mERROR: duplicate key value violates unique constraint "student_pkey" (SQLSTATE 23505)
+[0m[33m[52.609ms] [34;1m[rows:-][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (0,'Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 10:02:51')
+10:02:50 | 500 |   68.774917ms | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 10:03:26 [32m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:42
+[0m[33m[16.399ms] [34;1m[rows:0][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (0,'Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 10:03:26')
+10:03:26 | 201 |   17.654208ms | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 10:07:19 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:42 [35;1mERROR: duplicate key value violates unique constraint "student_pkey" (SQLSTATE 23505)
+[0m[33m[5.486ms] [34;1m[rows:-][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (0,'Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 10:07:19')
+10:07:19 | 500 |    6.275042ms | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 10:08:48 [31;1m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:42 [35;1mERROR: duplicate key value violates unique constraint "student_pkey" (SQLSTATE 23505)
+[0m[33m[4.715ms] [34;1m[rows:-][0m INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (0,'Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 10:08:48')
+10:08:48 | 500 |    5.895958ms | 127.0.0.1 | POST | /auth/register/student | -
+signal: interrupt
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.52.0                   │ 
+ │               http://127.0.0.1:3000               │ 
+ │       (bound on host 0.0.0.0 and port 3000)       │ 
+ │                                                   │ 
+ │ Handlers ............ 17  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID .............. 4902 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2024/01/25 10:09:41 [32m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:42
+[0m[33m[56.004ms] [34;1m[rows:0][0m INSERT INTO student ( name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES ('Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 10:09:41')
+10:09:41 | 201 |   57.528583ms | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 10:09:43 [32m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:42
+[0m[33m[1.869ms] [34;1m[rows:0][0m INSERT INTO student ( name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES ('Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 10:09:43')
+10:09:43 | 201 |       2.169ms | 127.0.0.1 | POST | /auth/register/student | -
+
+2024/01/25 10:10:19 [32m/Users/fdsap-jc.volasco/Desktop/finance_system/goroutine copy/Login-System/account/students.go:42
+[0m[33m[3.039ms] [34;1m[rows:0][0m INSERT INTO student ( name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES ('Glen',1235234242,'COE','TOR',1000,50000,'2024-01-25 10:10:19')
+10:10:19 | 201 |    3.672541ms | 127.0.0.1 | POST | /auth/register/student | -
+signal: interrupt

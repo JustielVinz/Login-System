@@ -8,7 +8,7 @@ type AdminAcc struct {
 	Department string `json:"department"`
 }
 type Student struct {
-	ID            int    `json:"id"`
+	ID            int    `json:"id,omitempty"`
 	Name          string `json:"name"`
 	StudentID     int    `json:"student_id"`
 	Department    string `json:"department"`

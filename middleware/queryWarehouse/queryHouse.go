@@ -10,7 +10,7 @@ var InsertData = `INSERT INTO teacher (name, department, created_at) VALUES (?,?
 var KeyGenerator = `SELECT username, password  FROM credentials WHERE username = ?`
 
 // Inserting Data of  Student
-var StudentLogin = `INSERT INTO student (id, name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (?,?,?,?,?,?,?,?,?)`
+var StudentLogin = `INSERT INTO student ( name, student_id, department, miscellaneous, payment_method, amount, created_at) VALUES (?,?,?,?,?,?,?)`
 
 // Creating new admin
 var AdminKey = `INSERT INTO credentials (id, username, password, status, created_at) VALUES (?,?, ?, ?, ?)`
